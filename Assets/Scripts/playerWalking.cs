@@ -23,7 +23,16 @@ public class playerWalking : MonoBehaviour
     private GameObject cam;
     private Animator camAnim;
     private bool move;
-    public int use = 1;
+    int n = 0;
+
+    //Skill
+    [SerializeField]
+     public GameObject[] arraySkill;
+     public GameObject array;
+     int count = 0;
+     int check = 0;
+
+     public GameObject game1, game2;
 
     void Start()
     {
@@ -40,12 +49,19 @@ public class playerWalking : MonoBehaviour
             new GradientAlphaKey[] { new GradientAlphaKey(1, 0.0f), new GradientAlphaKey(0, 1.0f) }
         );
         trailRenderer.colorGradient = gradient;
+
+        count = array.transform.childCount;
+        arraySkill = new GameObject[count];
+        for(int i = 0; i < count; i++){
+            arraySkill[i] = array.transform.GetChild(i).gameObject;
+        }
     }
     public void moveDown(){
             move = true;
         }
     public void moveUp(){
             move = false;
+            GetComponent<Rigidbody2D>().gravityScale = 2.5f;
         }
 
     void Update()
@@ -72,7 +88,7 @@ public class playerWalking : MonoBehaviour
         if(move){
             Instantiate(dashParticle,new Vector2(gameObject.transform.position.x, gameObject.transform.position.y),Quaternion.identity);
             animator.SetTrigger("dash");
-            camAnim.SetTrigger("zoomin");
+            //camAnim.SetTrigger("zoomin");
             direction = 1;
             if(dashTime <= 0){
                 direction = 0;
@@ -96,9 +112,12 @@ public class playerWalking : MonoBehaviour
                 dashTime -= Time.deltaTime;
                 if(gameObject.transform.localScale.x == -1)
                 {
+                    GetComponent<Rigidbody2D>().gravityScale = 0;
                     rigidbody.velocity = Vector2.left * dashSpeed;
+    
                 }else if (gameObject.transform.localScale.x == 1)
                 {
+                    GetComponent<Rigidbody2D>().gravityScale = 0;
                     rigidbody.velocity = Vector2.right * dashSpeed;
                 }
                 
@@ -116,16 +135,52 @@ public class playerWalking : MonoBehaviour
             }
             animator.SetTrigger("jump");
             rigidbody.velocity = Vector2.up * jumpSpeed;
+            destroySkin();
         }
     }
     public void useSkill(){
-        if(use == 1){
-            jumpButton();
-        }else if(use == 2){
+        if(check < count){
+        if(arraySkill[check].gameObject.tag.Equals("up")){
+              jumpButton();
+              
+        }else if(arraySkill[check].gameObject.tag.Equals("dash")){
+            destroySkin();
             dash();
+        }
+        else if(arraySkill[check].gameObject.tag.Equals("flash")){
+            if(gameObject.transform.localScale.x == -1){
+                   flash(-10f);
+            }else
+                {
+                    flash(10f);
+                }
+        }else if(arraySkill[check].gameObject.tag.Equals("thorn_color")){
+            n+=1;
+            thornColor();
+            Debug.Log(n);
+        }
         }
     }
     private void dash(){
         move = true;
+    }
+    private void destroySkin(){
+            Destroy(arraySkill[check].gameObject);
+            check+=1;
+    }
+    public void flash(float number)
+    {
+        gameObject.transform.position = new Vector2(gameObject.transform.position.x,
+        gameObject.transform.position.y + number);
+        destroySkin();
+    }
+    private void thornColor(){
+            if(n%2==0){
+                    game1.SetActive(true);
+                    game2.SetActive(false);
+            }else{
+                game2.SetActive(true);
+                game1.SetActive(false);
+            }
     }
 }

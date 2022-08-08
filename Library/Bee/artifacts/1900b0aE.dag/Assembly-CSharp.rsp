@@ -347,12 +347,18 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.SpatialTracking.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
+"Assets/new/Script/Move.cs"
+"Assets/new/Script/NextLevel.cs"
+"Assets/new/Script/Skill.cs"
 "Assets/Scripts/checkIfGrounded.cs"
+"Assets/Scripts/color_lerd.cs"
 "Assets/Scripts/getHit.cs"
 "Assets/Scripts/left.cs"
 "Assets/Scripts/move.cs"
 "Assets/Scripts/playerWalking.cs"
+"Assets/Scripts/Rest.cs"
 "Assets/Scripts/right.cs"
+"Assets/Scripts/Thorns.cs"
 "Assets/Scripts/turn.cs"
 -langversion:9.0
 
