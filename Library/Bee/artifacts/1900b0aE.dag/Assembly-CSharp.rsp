@@ -355,6 +355,7 @@
 "Assets/Scripts/getHit.cs"
 "Assets/Scripts/left.cs"
 "Assets/Scripts/move.cs"
+"Assets/Scripts/moveCube.cs"
 "Assets/Scripts/playerWalking.cs"
 "Assets/Scripts/Rest.cs"
 "Assets/Scripts/right.cs"

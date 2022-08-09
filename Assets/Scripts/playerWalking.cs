@@ -23,7 +23,7 @@ public class playerWalking : MonoBehaviour
     private GameObject cam;
     private Animator camAnim;
     private bool move;
-    int n = 0;
+    int n = 1, g = 0;
 
     //Skill
     [SerializeField]
@@ -33,6 +33,7 @@ public class playerWalking : MonoBehaviour
      int check = 0;
 
      public GameObject game1, game2;
+     private bool gravity = false;
 
     void Start()
     {
@@ -84,6 +85,11 @@ public class playerWalking : MonoBehaviour
         // }else{
         //     animator.SetBool("walking", false);
         // }
+        if(gravity){
+            GetComponent<Rigidbody2D>().gravityScale = 0;
+        }else{
+            GetComponent<Rigidbody2D>().gravityScale = 2.5f;
+        }
         
         if(move){
             Instantiate(dashParticle,new Vector2(gameObject.transform.position.x, gameObject.transform.position.y),Quaternion.identity);
@@ -157,9 +163,23 @@ public class playerWalking : MonoBehaviour
         }else if(arraySkill[check].gameObject.tag.Equals("thorn_color")){
             n+=1;
             thornColor();
-            Debug.Log(n);
+        }
+        else if(arraySkill[check].gameObject.tag.Equals("gravity")){
+            graVity();
+            g+=1;
         }
         }
+    }
+    private void graVity(){
+        if(g%2 == 0){
+          gravity = true;
+          rigidbody.velocity = Vector2.up * 8f;
+        }else{
+            gravity = false;
+            rigidbody.velocity = Vector2.down * 2f;
+        }
+        destroySkin();
+        
     }
     private void dash(){
         move = true;
@@ -182,5 +202,6 @@ public class playerWalking : MonoBehaviour
                 game2.SetActive(true);
                 game1.SetActive(false);
             }
+            destroySkin();
     }
 }

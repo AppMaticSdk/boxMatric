@@ -12,6 +12,8 @@ TagManager:
   - dash
   - flash
   - thorn_color
+  - thorn_color2
+  - gravity
   layers:
   - Default
   - TransparentFX
