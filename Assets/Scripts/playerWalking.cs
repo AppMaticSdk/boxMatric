@@ -23,7 +23,8 @@ public class playerWalking : MonoBehaviour
     private GameObject cam;
     private Animator camAnim;
     private bool move;
-    int n = 1, g = 0;
+    int n = 0, g = 0;
+    private float flashint;
 
     //Skill
     [SerializeField]
@@ -37,6 +38,7 @@ public class playerWalking : MonoBehaviour
 
     void Start()
     {
+        flashint = 4.2f;
         cam = GameObject.FindGameObjectWithTag("MainCamera");
         camAnim = cam.GetComponent<Animator>();
         move = false;
@@ -85,19 +87,21 @@ public class playerWalking : MonoBehaviour
         // }else{
         //     animator.SetBool("walking", false);
         // }
-        if(gravity){
-            GetComponent<Rigidbody2D>().gravityScale = 0;
-        }else{
-            GetComponent<Rigidbody2D>().gravityScale = 2.5f;
-        }
+        // if(gravity){
+        //     GetComponent<Rigidbody2D>().gravityScale = 0;
+        //     //rigidbody.velocity = Vector2.up * 8f;
+        // }else{
+        //     GetComponent<Rigidbody2D>().gravityScale = 2.5f;
+        // }
         
         if(move){
             Instantiate(dashParticle,new Vector2(gameObject.transform.position.x, gameObject.transform.position.y),Quaternion.identity);
             animator.SetTrigger("dash");
             //camAnim.SetTrigger("zoomin");
-            direction = 1;
+            //direction = 1;
             if(dashTime <= 0){
-                direction = 0;
+                move = false;
+                GetComponent<Rigidbody2D>().gravityScale = 2.5f;
                 dashTime = startDashTime;
                 rigidbody.velocity = Vector2.zero;
                 Gradient gradient = new Gradient();
@@ -140,7 +144,11 @@ public class playerWalking : MonoBehaviour
                 Instantiate(walkParticle,new Vector2(gameObject.transform.position.x, gameObject.transform.position.y - 0.5f),Quaternion.identity);
             }
             animator.SetTrigger("jump");
-            rigidbody.velocity = Vector2.up * jumpSpeed;
+            if(GetComponent<Rigidbody2D>().gravityScale == 0){
+                rigidbody.velocity = Vector2.down * jumpSpeed;
+            }else{
+                rigidbody.velocity = Vector2.up * jumpSpeed;
+            }
             destroySkin();
         }
     }
@@ -154,12 +162,7 @@ public class playerWalking : MonoBehaviour
             dash();
         }
         else if(arraySkill[check].gameObject.tag.Equals("flash")){
-            if(gameObject.transform.localScale.x == -1){
-                   flash(-10f);
-            }else
-                {
-                    flash(10f);
-                }
+                flash();
         }else if(arraySkill[check].gameObject.tag.Equals("thorn_color")){
             n+=1;
             thornColor();
@@ -170,10 +173,16 @@ public class playerWalking : MonoBehaviour
         }
         }
     }
+    private void FixedUpdate(){
+        if(gravity){
+            rigidbody.velocity = Vector2.up * 8f;
+        }
+    }
     private void graVity(){
         if(g%2 == 0){
           gravity = true;
           rigidbody.velocity = Vector2.up * 8f;
+          
         }else{
             gravity = false;
             rigidbody.velocity = Vector2.down * 2f;
@@ -188,18 +197,22 @@ public class playerWalking : MonoBehaviour
             Destroy(arraySkill[check].gameObject);
             check+=1;
     }
-    public void flash(float number)
+    public void flash()
     {
         gameObject.transform.position = new Vector2(gameObject.transform.position.x,
-        gameObject.transform.position.y + number);
+        gameObject.transform.position.y + flashint);
         destroySkin();
     }
     private void thornColor(){
             if(n%2==0){
                     game1.SetActive(true);
+                    if(game2 == true){
                     game2.SetActive(false);
+                    };
             }else{
+                if(game2 == true){
                 game2.SetActive(true);
+                }
                 game1.SetActive(false);
             }
             destroySkin();

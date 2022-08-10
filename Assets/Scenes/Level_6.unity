@@ -3672,7 +3672,7 @@ Transform:
   - {fileID: 1923848330}
   - {fileID: 631211558}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1801709638 stripped
 Transform:
@@ -3911,7 +3911,7 @@ Transform:
   - {fileID: 76147867}
   - {fileID: 1374465880}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1877817243
 PrefabInstance:
@@ -4553,7 +4553,7 @@ PrefabInstance:
     - target: {fileID: 715112466043323616, guid: c07a0d3ebb1d8714aade0c320fe440fe,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 715112466043323616, guid: c07a0d3ebb1d8714aade0c320fe440fe,
         type: 3}
@@ -5524,12 +5524,12 @@ PrefabInstance:
         type: 3}
       propertyPath: game1
       value: 
-      objectReference: {fileID: 2142744539}
+      objectReference: {fileID: 727473618}
     - target: {fileID: 7301383003657114747, guid: 756deac17a857b84381d4907a1ab6522,
         type: 3}
       propertyPath: game2
       value: 
-      objectReference: {fileID: 727473618}
+      objectReference: {fileID: 2142744539}
     - target: {fileID: 7301383003657114747, guid: 756deac17a857b84381d4907a1ab6522,
         type: 3}
       propertyPath: jumpSpeed

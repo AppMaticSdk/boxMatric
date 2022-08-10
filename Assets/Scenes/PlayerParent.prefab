@@ -46,7 +46,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.038006186, y: -0.010557413}
+  m_Offset: {x: 0.0012640953, y: 0.0139375925}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -57,7 +57,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.47635865, y: 0.37923145}
+  m_Size: {x: 0.63149357, y: 0.64051175}
   m_EdgeRadius: 0
 --- !u!114 &7301383002496058594
 MonoBehaviour:
@@ -422,7 +422,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 2.5
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: fe85d709ab21f0546a1d18a29f437edb, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -465,18 +465,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2400480d5d41314fb87c18f7011fe9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpSpeed: 15
+  jumpSpeed: 14
   animator: {fileID: 7301383002688030716}
   walkParticle: {fileID: 3540443333715394928, guid: e581816bffad11048a1dab774aaa8626,
     type: 3}
   grounded: 0
-  dashSpeed: 70
+  dashSpeed: 80
   startDashTime: 0.1
   dashParticle: {fileID: 7216833293492446983, guid: 8a88dcfa67ab86d43918f097ee7147a8,
     type: 3}
   trailRenderer: {fileID: 7301383003657114740}
   arraySkill: []
   array: {fileID: 0}
+  game1: {fileID: 0}
+  game2: {fileID: 0}
 --- !u!114 &7301383003657114741
 MonoBehaviour:
   m_ObjectHideFlags: 0
