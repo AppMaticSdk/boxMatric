@@ -307,6 +307,7 @@
 -r:"Library/Bee/artifacts/1300b0aP.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
 "Assets/new/Script/Move.cs"
 "Assets/new/Script/Skill.cs"
+"Assets/Scripts/checkDestroy.cs"
 "Assets/Scripts/checkIfGrounded.cs"
 "Assets/Scripts/color_lerd.cs"
 "Assets/Scripts/getHit.cs"
@@ -319,6 +320,7 @@
 "Assets/Scripts/playerWalking.cs"
 "Assets/Scripts/Rest.cs"
 "Assets/Scripts/right.cs"
+"Assets/Scripts/test.cs"
 "Assets/Scripts/Thorns.cs"
 "Assets/Scripts/turn.cs"
 -langversion:9.0

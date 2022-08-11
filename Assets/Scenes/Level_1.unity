@@ -1166,12 +1166,12 @@ PrefabInstance:
     - target: {fileID: 2691986773167696777, guid: 471e352c436433747a08e9e25ad11cae,
         type: 3}
       propertyPath: m_Size.x
-      value: 0.9868343
+      value: 0.966529
       objectReference: {fileID: 0}
     - target: {fileID: 2691986773167696777, guid: 471e352c436433747a08e9e25ad11cae,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0.006582856
+      value: 0.01673548
       objectReference: {fileID: 0}
     - target: {fileID: 5660585165686403111, guid: 471e352c436433747a08e9e25ad11cae,
         type: 3}
@@ -2655,7 +2655,7 @@ PrefabInstance:
     - target: {fileID: 7301383003657114747, guid: 756deac17a857b84381d4907a1ab6522,
         type: 3}
       propertyPath: startDashTime
-      value: 0.05
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7301383003657114749, guid: 756deac17a857b84381d4907a1ab6522,
         type: 3}

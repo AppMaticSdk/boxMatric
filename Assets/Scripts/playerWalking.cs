@@ -65,6 +65,9 @@ public class playerWalking : MonoBehaviour
     public void moveUp(){
             move = false;
             GetComponent<Rigidbody2D>().gravityScale = 2.5f;
+            dashTime = startDashTime;
+            // dashTime -= Time.deltaTime;
+            
         }
 
     void Update()

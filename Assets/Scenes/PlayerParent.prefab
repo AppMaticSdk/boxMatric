@@ -465,7 +465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2400480d5d41314fb87c18f7011fe9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpSpeed: 14
+  jumpSpeed: 15
   animator: {fileID: 7301383002688030716}
   walkParticle: {fileID: 3540443333715394928, guid: e581816bffad11048a1dab774aaa8626,
     type: 3}
