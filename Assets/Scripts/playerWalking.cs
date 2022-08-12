@@ -25,7 +25,7 @@ public class playerWalking : MonoBehaviour
     private bool move;
     int n = 0, g = 0;
     private float flashint;
-
+   
     //Skill
     [SerializeField]
      public GameObject[] arraySkill;
@@ -36,6 +36,9 @@ public class playerWalking : MonoBehaviour
      public GameObject game1, game2;
      private bool gravity = false;
 
+
+     //source
+     [SerializeField] private AudioSource playSkill,playJump, playDash, playThorn, playFlash, playGravity;
     void Start()
     {
         flashint = 4.2f;
@@ -158,22 +161,29 @@ public class playerWalking : MonoBehaviour
     public void useSkill(){
         if(check < count){
         if(arraySkill[check].gameObject.tag.Equals("up")){
-              jumpButton();
+            playJump.Play();
+            jumpButton();
               
         }else if(arraySkill[check].gameObject.tag.Equals("dash")){
             destroySkin();
             dash();
+            playDash.Play();
         }
         else if(arraySkill[check].gameObject.tag.Equals("flash")){
                 flash();
+                playFlash.Play();
         }else if(arraySkill[check].gameObject.tag.Equals("thorn_color")){
             n+=1;
             thornColor();
+            playThorn.Play();
         }
         else if(arraySkill[check].gameObject.tag.Equals("gravity")){
             graVity();
             g+=1;
+            playGravity.Play();
         }
+        }else{
+            playSkill.Play();
         }
     }
     private void FixedUpdate(){
