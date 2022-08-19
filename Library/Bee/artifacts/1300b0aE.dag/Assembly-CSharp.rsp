@@ -360,6 +360,7 @@
 "Assets/Scripts/moveDone.cs"
 "Assets/Scripts/NextLevel.cs"
 "Assets/Scripts/openLevel.cs"
+"Assets/Scripts/openUi.cs"
 "Assets/Scripts/pause.cs"
 "Assets/Scripts/playerWalking.cs"
 "Assets/Scripts/Rest.cs"

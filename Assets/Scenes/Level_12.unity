@@ -3778,8 +3778,7 @@ PrefabInstance:
       value: Thorn_3 (2)
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 8204778057664254680, guid: 22f95fa281ee31340af64147b72fc139, type: 3}
-    - {fileID: 2229538072029962514, guid: 22f95fa281ee31340af64147b72fc139, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 22f95fa281ee31340af64147b72fc139, type: 3}
 --- !u!4 &1670884752 stripped
 Transform:
@@ -5251,6 +5250,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -199
+      objectReference: {fileID: 0}
+    - target: {fileID: 5823891904992844265, guid: b0cb693857fe418469b0ba927865d9a8,
+        type: 3}
+      propertyPath: m_text
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0cb693857fe418469b0ba927865d9a8, type: 3}

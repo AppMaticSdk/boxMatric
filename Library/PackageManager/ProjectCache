@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637951798591582305
-    m_Hash: 2868257400
+      ticks: 637964890014850390
+    m_Hash: 1728223350
   m_LockFileStatus:
     m_FilePath: E:/howToProperlyDASH/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637951798848073435
-    m_Hash: 351973049
+      ticks: 637964890014860361
+    m_Hash: 3890174422
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -2939,9 +2939,11 @@ m_ResolvedPackages:
     - 2.1.7
     - 2.1.8
     - 2.1.9
+    - 2.1.10
     compatible:
     - 2.1.9
-    verified: 2.1.9
+    - 2.1.10
+    verified: 2.1.10
   dependencies:
   - name: com.unity.modules.vr
     version: 1.0.0
@@ -3085,11 +3087,13 @@ m_ResolvedPackages:
     - 1.4.0
     - 1.4.1
     - 1.4.2
+    - 1.4.3
     compatible:
     - 1.4.0
     - 1.4.1
     - 1.4.2
-    verified: 1.4.2
+    - 1.4.3
+    verified: 1.4.3
   dependencies:
   - name: com.unity.modules.unitywebrequest
     version: 1.0.0
